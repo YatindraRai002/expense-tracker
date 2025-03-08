@@ -30,7 +30,7 @@ function loadData() {
   }
 }
 
-// Save data to localStorage
+
 function saveData() {
   localStorage.setItem('expenses', JSON.stringify(expenses));
   localStorage.setItem('totalAmount', totalAmount.toFixed(2));
