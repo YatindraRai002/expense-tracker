@@ -69,7 +69,7 @@ function addExpense() {
   expenseList.appendChild(expenseItem);
 
   updateTotalAmount();
-  saveData(); // Save data to localStorage after adding an expense
+  saveData(); 
 }
 
 function deleteExpense(index) {
@@ -80,10 +80,10 @@ function deleteExpense(index) {
   expenseList.removeChild(expenseList.children[index]);
 
   updateTotalAmount();
-  saveData(); // Save data to localStorage after deleting an expense
+  saveData(); 
 }
 
-// Load data when the page loads
+
 window.onload = loadData;
 
 addExpenseBtn.addEventListener('click', addExpense);
