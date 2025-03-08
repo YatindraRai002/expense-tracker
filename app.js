@@ -7,7 +7,7 @@ const totalAmountDisplay = document.getElementById('total-amount');
 let totalAmount = 0;
 let expenses = [];
 
-// Load data from localStorage when the page loads
+
 function loadData() {
   const storedExpenses = localStorage.getItem('expenses');
   const storedTotalAmount = localStorage.getItem('totalAmount');
