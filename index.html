@@ -1,32 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Expense Tracker</title>
-  <link rel="stylesheet" href="stlyes.css">
+  <link rel="stylesheet" href="stlyes.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Expense Tracker</h1>
-    
-    
-    <div class="form-container">
-      <input type="text" id="expense-description" placeholder="Expense Description" />
-      <input type="number" id="expense-amount" placeholder="Amount" />
-      <button id="add-expense-btn">Add Expense</button>
+  <div class="app-container">
+    <!-- Summary Card -->
+    <div class="card summary-card">
+      <div class="card-header">
+        <div>
+          <h2 class="card-title">Summary</h2>
+          <p class="card-subtitle">Your spending overview</p>
+        </div>
+      </div>
+      <div class="chart-container">
+        <div class="donut-chart">
+          <svg width="200" height="200" id="donut-svg"></svg>
+          <div class="chart-center">
+            <div class="total-amount">₹<span id="total-display">0</span></div>
+            <div class="total-label">Total Spent</div>
+          </div>
+        </div>
+      </div>
+      <div class="category-summary" id="category-summary"></div>
     </div>
 
-    
-    <div class="expense-list-container">
-      <ul id="expense-list">
-     
-      </ul>
+    <!-- Analytics Card -->
+    <div class="card analytics-card">
+      <div class="card-header">
+        <div>
+          <h2 class="card-title">Analytics</h2>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">₹<span id="avg-daily">0</span></div>
+          <div class="stat-label">Avg Daily</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="transaction-count">0</div>
+          <div class="stat-label">Transactions</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">₹<span id="highest-expense">0</span></div>
+          <div class="stat-label">Highest</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="days-tracked">0</div>
+          <div class="stat-label">Days Tracked</div>
+        </div>
+      </div>
+      <div class="chart-area">
+        <div class="chart-line"></div>
+      </div>
     </div>
 
- 
-    <div class="total-expense">
-      <strong>Total Expense: ₹<span id="total-amount">0</span></strong>
+    <!-- Transactions Card -->
+    <div class="card transactions-card">
+      <div class="card-header">
+        <div>
+          <h2 class="card-title">Transactions</h2>
+          <p class="card-subtitle">Recent activity</p>
+        </div>
+      </div>
+      <div class="add-expense-form">
+        <input type="text" class="form-input" id="expense-description" placeholder="What did you buy?" />
+        <input type="number" class="form-input" id="expense-amount" placeholder="Amount" />
+        <select class="form-input" id="expense-category">
+          <option value="">Select Category</option>
+          <option value="food">Food</option>
+          <option value="transport">Transport</option>
+          <option value="shopping">Shopping</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="household">Household Resources</option>
+          <option value="others">Others</option>
+        </select>
+        <button class="add-btn" id="add-expense-btn">Add</button>
+      </div>
+      <div class="transactions-list" id="transactions-list"></div>
     </div>
   </div>
 
